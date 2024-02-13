@@ -4,7 +4,7 @@ This reposetory React.JS Mini Projects.
 | Projects |
 | --------------------- |
 <br />
-[OTPCountdown](https://github.com/ahsan36/React.js-Mini-Projects/tree/main/OTPCountdown)
+([OTPCountdown](https://github.com/ahsan36/React.js-Mini-Projects/tree/main/OTPCountdown))
 <br />
 [FileSizeValidation](https://github.com/ahsan36/React.js-Mini-Projects/tree/main/FileSizeValidation)
 <br />

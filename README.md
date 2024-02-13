@@ -9,4 +9,3 @@ This reposetory React.JS Mini Projects.
 2.[FileSizeValidation](https://github.com/ahsan36/React.js-Mini-Projects/tree/main/FileSizeValidation)
 <br />
 3.[LikeDislikeButton](https://github.com/ahsan36/React.js-Mini-Projects/tree/main/LikeDislikeButton)
-This site was built using [GitHub Pages](https://pages.github.com/).

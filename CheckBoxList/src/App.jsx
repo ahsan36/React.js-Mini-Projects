@@ -3,11 +3,11 @@ import './App.css'
 
 const LIST_DATA = [
   { id: "1", value: "Javascript" },
-  { id: "2", value: "Python" },
-  { id: "3", value: "Java" },
-  { id: "4", value: "Kotlin" },
-  { id: "5", value: "Dart" },
-  { id: "6", value: "C#" },
+  { id: "2", value: "React" },
+  { id: "3", value: "HTML" },
+  { id: "4", value: "CSS" },
+  { id: "5", value: "Java" },
+  { id: "6", value: "NodeJS" },
 ];
 
 const App = () => {
@@ -19,7 +19,7 @@ const App = () => {
       <div className="card">
         <div className="card-header">
           <p className="title">
-            Select Programming Language
+            Select Skills
           </p>
         </div>
       </div>      

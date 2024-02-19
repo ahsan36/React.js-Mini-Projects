@@ -7,7 +7,7 @@ const App = () => {
     email: "",
     password: "",
     confirmPassword: "",
-    successMessage: "",
+    successMsg: "",
   });
 
   const [formError, setFormError] = useState({
@@ -16,7 +16,7 @@ const App = () => {
     confirmPassword: "",
   });
 
-  // Handle user input change for form fields
+  // Handle user input changes for form fields
   const handleUserInput = (name, value) => {
     setFormInput({
       ...formInput,
@@ -25,7 +25,7 @@ const App = () => {
   };
 
   // Validate the form input when the user submits the form
-  const validateFromInput = (event) => {
+  const validateFormInput = (event) => {
     event.preventDefault();
 
     // Initialize an object to track input errors
@@ -36,7 +36,7 @@ const App = () => {
     };
 
     // Check if email and password are empty
-    if(!formInput.email && !formInput.password) {
+    if (!formInput.email && !formInput.password) {
       setFormError({
         ...inputError,
         email: "Enter a valid email address",
@@ -46,26 +46,25 @@ const App = () => {
     }
 
     // Check if email is empty
-    if(!formInput.email) {
+    if (!formInput.email) {
       setFormError({
         ...inputError,
         email: "Enter a valid email address",
-        password: "Password should not be empty",
       });
       return;
     }
 
     // Check if password and confirm password match
-    if(!formInput.confirmPassword !== formInput.password) {
+    if (formInput.confirmPassword !== formInput.password) {
       setFormError({
         ...inputError,
         confirmPassword: "Password and confirm password should be the same",
       });
       return;
     }
-    
+
     // Check if password is empty
-    if(!formInput.password) {
+    if (!formInput.password) {
       setFormError({
         ...inputError,
         password: "Password should not be empty",
@@ -77,15 +76,70 @@ const App = () => {
     setFormError(inputError);
     setFormInput((prevState) => ({
       ...prevState,
-      successMessage: "Validation Success",
+      successMsg: "Validation Success",
     }));
   };
-  
+
   return (
-    <div>
-      Password Validation
+    <div className="container">
+      <div className="card">
+        <div className="card-header">
+          <h4 className="title">Simple Form</h4>
+        </div>
+
+        <div className="card-body">
+          <form onSubmit={validateFormInput}>
+            {/* Email input */}
+            <p className="label">Email</p>
+            <input
+              value={formInput.email}
+              onChange={({ target }) => {
+                handleUserInput(target.name, target.value);
+              }}
+              name="email"
+              type="text"
+              className="input"
+              placeholder="Enter Email"
+            />
+            <p className="error-message">{formError.email}</p>
+
+            {/* Password input */}
+            <p className="label">Password</p>
+            <input
+              value={formInput.password}
+              onChange={({ target }) => {
+                handleUserInput(target.name, target.value);
+              }}
+              name="password"
+              type="password"
+              className="input"
+              placeholder="Password"
+            />
+            <p className="error-message">{formError.password}</p>
+
+            {/* Confirm Password input */}
+            <p className="label">Confirm Password</p>
+            <input
+              value={formInput.confirmPassword}
+              onChange={({ target }) => {
+                handleUserInput(target.name, target.value);
+              }}
+              name="confirmPassword"
+              type="password"
+              className="input"
+              placeholder="Confirm Password"
+            />
+
+            <p className="error-message">{formError.confirmPassword}</p>
+            <p className="success-message">{formInput.successMsg}</p>
+
+            {/* Submit button */}
+            <input type="submit" className="btn" value="Submit" />
+          </form>
+        </div>
+      </div>
     </div>
-  )
+  );  
 }
 
 export default App

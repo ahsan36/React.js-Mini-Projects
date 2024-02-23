@@ -4,7 +4,7 @@ import './App.css'
 const App = () => {
   return (
     <div>
-      Counter Game
+      <h1>Counter Game</h1>
     </div>
   )
 }
